@@ -1,24 +1,21 @@
 {
-  "name": "docker-prerender",
-  "version": "1.0.0",
-  "description": "Dockerfile to build the prerender container image",
-  "main": "server.js",
-  "dependencies": {
-    "prerender": "^3.14.1"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
+  "author": "Prerender.io",
+  "name": "prerender",
+  "description": "Service to prerender Javascript rendered pages for SEO",
+  "version": "3.19.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cerisier/docker-prerender.git"
+    "url": "https://github.com/prerender/prerender"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cerisier/docker-prerender/issues"
+  "dependencies": {
+    "aws-sdk": "^2.1.8",
+    "cache-manager": "^0.16.0",
+    "lodash": "^3.1.0",
+    "phantom": "^0.7.2",
+    "phantomjs": "^1.9.15",
+    "tree-kill": "0.0.6"
   },
-  "homepage": "https://github.com/cerisier/docker-prerender"
+  "bin": {
+    "prerender": "server.js"
+  }
 }
