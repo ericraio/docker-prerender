@@ -8,19 +8,19 @@ var server = prerender({
     });
 
 
-//server.use(prerender.removeScriptTags());
 
 if (process.env.BASIC_AUTH_USERNAME) {
     server.use(prerender.basicAuth());
 }
 
-server.use(prerender.inMemoryHtmlCache());
+server.use(prerender.removeScriptTags());
+server.use(prerender.httpHeaders());
+server.use(prerender.logger());
 
+//server.use(prerender.inMemoryHtmlCache());
 //server.use(prerender.blacklist());
-//server.use(prerender.httpHeaders());
 // server.use(prerender.s3HtmlCache());
 // server.use(require('my-plugin'));
 
-server.use(prerender.logger());
 
 server.start();
